@@ -1,0 +1,99 @@
+/* --- MAIN STYLESHEET FOR ADMIN LAYOUT --- */
+:root {
+  --sidebar-bg: #2d3748;
+  --main-bg: #f7fafc;
+  --card-bg: #ffffff;
+  --text-light: #e2e8f0;
+  --text-dark: #2d3748;
+  --text-muted: #718096;
+  --primary-accent: #3182ce;
+  --border-color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--text-dark);
+}
+
+.admin-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: var(--text-light);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.sidebar-logo {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+  /* We now style the <a> tag inside the <li> for routing */
+  .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+
+    .sidebar ul li a:hover {
+      background-color: #4a5568;
+    }
+
+    /* Vue Router's special class for the active link */
+    .sidebar ul li a.router-link-exact-active {
+      background-color: var(--primary-accent);
+      color: #ffffff;
+    }
+
+  .sidebar ul li i {
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+.main-view {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Adding a generic container style for views */
+.view-container {
+  padding: 2rem;
+}
